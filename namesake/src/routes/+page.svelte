@@ -2,7 +2,27 @@
 	function openInNewTab(url) {
 		window.open(url, '_blank').focus();
 	}
+	let width = $state(200);
+
+	function downloadResume(){
+		const link = document.createElement('a');
+		link.style.display = 'none';
+		link.href = '/resume.png';
+		link.download = 'Resume_Iyan_Syeed-Miller';
+
+		// It needs to be added to the DOM so it can be clicked
+		document.body.appendChild(link);
+		link.click();
+
+		// To make this work on Firefox we need to wait
+		// a little while before removing it.
+		setTimeout(() => {
+			URL.revokeObjectURL(link.href);
+			link.parentNode.removeChild(link);
+		}, 0);
+	}
 </script>
+<svelte:window bind:innerWidth={width}/>
 <div class='page'>
 	<br>
 	<br>
@@ -12,16 +32,23 @@
 	</header>
 	<br>
 	<div class="links">
-		<button onclick={openInNewTab("https://github.com/Fireg53")} class="gradient"><i class="fab fa-github"></i><span>Fireg53</span></button>
-		<button onclick={openInNewTab("https://www.youtube.com/@fireg5355")} class="gradient"><i class="fab fa-youtube"></i> <span>Fireg5355</span></button>
-		<button onclick={openInNewTab("https://www.instagram.com/iyan.in3d/")} class="gradient"><i class="fab fa-instagram"></i>Iyan.in3d</button>
-		<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")} class="gradient"><i class="fas fa-envelope"></i> <span>Iyansyeedmiller@gmail.com</span></button>
+		<button onclick={openInNewTab("https://github.com/Fireg53")} class="bioLink"><i class="fab fa-github"></i><span>Fireg53</span></button>
+		<button onclick={openInNewTab("https://www.youtube.com/@fireg5355")} class="bioLink"><i class="fab fa-youtube"></i> <span>Fireg5355</span></button>
+		<button onclick={openInNewTab("https://www.instagram.com/iyan.in3d/")} class="bioLink"><i class="fab fa-instagram"></i>Iyan.in3d</button>
+		<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")} class="bioLink"><i class="fas fa-envelope"></i> <span>Iyansyeedmiller@gmail.com</span></button>
 	</div>
-	<div class="resume_container">
-		<div class="resume">
-			<span class='label'><p>Resume</p><button class='download'><i class="fas fa-download"></i></button></span>
-			<img src="Resume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
+	<div class="bodyContainer">
+		<div class="resumeBorder gradient">
+			<span class='label'><p>Resume</p><button class='download' onclick={downloadResume()}><i class="fas fa-download"></i></button></span>
+			<img  class="resume" src="resume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
 		</div>
+		<!--
+		<div class="thumbnailContainer">
+			<div class="thumbnail gradient"></div>
+			<div class="thumbnail gradient"></div>
+			<div class="thumbnail gradient"></div>
+		</div>
+		-->
 	</div>
 </div>
 
@@ -49,20 +76,62 @@
 		color: #29274C;
 		margin-left: 5%;
 	}
-	.resume_container{
+
+	@media (max-width: 800px) {
+		.bodyContainer{
+			flex-direction: column;
+		}
+		.thumbnailContainer{
+			flex-direction: row;
+		}
+	}
+	@media (min-width: 801px) {
+		.thumbnailContainer{
+			flex-direction: column;
+		}
+	}
+
+
+	.bodyContainer{
 		display: flex;
 		justify-content: center;
+		align-items: center;
 	}
-	.resume{
+
+	.thumbnailContainer {
+		display: flex;
+		justify-content: space-between;
+		margin-left: 8vw;
+		margin-right: 8vw;
+		margin-top: 5rem;
+		height: 70vw;
+	}
+	
+	.thumbnail {
+		
+		width: 20vw;
+		height: 20vw;
+	}
+
+	.resumeBorder{
 		display: flex;
 		flex-direction: column;
 		padding: 20px;
+		margin-left: 5vw;
 		margin-top: 5rem;
-		background-image: linear-gradient( #E6BCCD, #D295BF, #7E52A0);
-		width: 55vw;
-		height: 70vw;
+		margin-right: 5vw;
 		border-radius: 20px;
 	}
+
+	.resume{
+		width: 55vw;
+		height: 70vw;
+	}
+
+	.gradient{
+		background-image: linear-gradient( #E6BCCD, #D295BF, #7E52A0);
+	}
+
 	.label{
 		padding-left: 2vw;
 		padding-right: 2vw;
@@ -84,7 +153,7 @@
 		color: white;
 		cursor: pointer;
 	}
-	.gradient {
+	.bioLink {
 	align-items: center;
 	background-image: linear-gradient(144deg,#E6BCCD, #D295BF 20%, #7E52A0);
 	border: 0;
@@ -108,8 +177,58 @@
 	transition: box-shadow ease 0.5s;
 	}
 
-	.gradient:active,
-	.gradient:not([disabled]):hover {
+	.bioLink:active,
+	.bioLink:not([disabled]):hover {
 		box-shadow:  -.125rem -.125rem 0.5rem #E6BCCD, .125rem .125rem 0.5rem #c085ee;
 	}
+
+	/*Page Transitions*/
+	:root {
+	--paperAngle: 20deg;
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+
+	@keyframes fade-out {
+		to {
+			opacity: 0;
+		}
+	}
+
+	@keyframes slide-from-top {
+		from {
+			transform: translateY(-100vh);
+		}
+	}
+
+	@keyframes slide-from-bottom {
+		from {
+			transform: translateY(100vh);
+		}
+	}
+
+	@keyframes spin {
+	from {
+		transform: rotate(20deg);
+	}
+	}
+
+
+	:root::view-transition-old(root) {
+	z-index: 1; /* Behind the new page */
+	animation: 3000ms;
+	}
+
+	:root::view-transition-new(root) {
+	z-index: 2;
+		animation:
+		1000ms cubic-bezier(0.4, 0, 0.2, 1) spin,
+		210ms cubic-bezier(0, 0, 0.2, 1) 90ms fade-in,
+		1000ms cubic-bezier(0.4, 0, 0.2, 1) slide-from-bottom;
+	}
+
 </style>

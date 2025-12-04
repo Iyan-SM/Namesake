@@ -1,11 +1,7 @@
 <script>
    import { onNavigate } from "$app/navigation";
    import { page } from '$app/stores';
-   import { derived } from 'svelte/store';
-
-  // Optional: make a derived store if you only need the pathname
-  const currentPath = derived(page, $page => $page.url.pathname);
-
+   
 	let { children } = $props();
 
    onNavigate((navigation) => {
@@ -22,27 +18,33 @@
 
 <nav>
    <div class='bar short'>
-      {#if currentPath === '/'}
-         <span class="active">Home</span>
+      <!--
+      {#if $page.url.pathname === '/'}
+         <a href="/" class="deactivated">Home</a>
       {:else}
          <a href="/">Home</a>
       {/if}
+      -->
    </div>
 
    <div class='bar med'>
-      {#if currentPath === '/portfolio'}
-         <span class="active">Portfolio</span>
+      <!--
+      {#if $page.url.pathname === '/portfolio'}
+         <a href="/portfolio" class="deactivated">Portfolio</a>
       {:else}
          <a href="/portfolio">Portfolio</a>
       {/if}
+      -->
    </div>
 
    <div class='bar long'>
-      {#if currentPath === '/games'}
-         <span class="active">Games</span>
+      <!--
+      {#if $page.url.pathname === '/games'}
+         <a href="/games" class="deactivated">Games</a>
       {:else}
          <a href="/games">Games</a>
       {/if}
+      -->
    </div>
 </nav>
 
@@ -51,7 +53,6 @@
 </div>
 
 <style>
-
  nav{
     position: absolute;
     left: 73%;
@@ -70,6 +71,10 @@
     margin-bottom: 1.2rem;
     view-transition-name: header;
  }
+ .deactivated{
+   pointer-events: none;
+   user-select: none;
+ }
 
  .bar{
     border-radius: 0px 0px 10px 10px;
@@ -86,7 +91,7 @@
     height: 10rem;
     transition: height ease 0.5s;
  }
- .short:not([disabled]):hover{
+ .short:not(.deactivated):hover{
     height: 10.4rem;
  }
 
@@ -96,7 +101,7 @@
     height: 17rem;
     transition: height ease 0.5s;
  }
- .med:not([disabled]):hover{
+ .med:not(.deactivated):hover{
     height: 17.4rem;
  }
 
@@ -106,7 +111,7 @@
     height: 24rem;
     transition: height ease 0.5s;
  }
- .long:not([disabled]):hover{
+ .long:not(.deactivated):hover{
     height: 24.4rem;
  }
 
@@ -130,47 +135,4 @@
  
 /*Page Transitions*/
 
- @keyframes fade-in {
-	from {
-		opacity: 0;
-	}
-}
-
-@keyframes fade-out {
-	to {
-		opacity: 0;
-	}
-}
-
-@keyframes slide-from-top {
-	from {
-		transform: translateY(-100vh);
-	}
-}
-
-@keyframes slide-to-bottom {
-	to {
-		transform: translateY(-30px);
-	}
-}
-
-@keyframes spin {
-   from {
-      transform: rotate(20deg);
-   }
-}
-
-
-:root::view-transition-old(root) {
-  z-index: 1; /* Behind the new page */
-  animation: 3000ms;
-}
-
-:root::view-transition-new(root) {
-   z-index: 2;
-	animation:
-      1000ms cubic-bezier(0.4, 0, 0.2, 1) both spin,
-		210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-		1000ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-top;
-}
 </style>
