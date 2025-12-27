@@ -7,7 +7,7 @@
 	function downloadResume(){
 		const link = document.createElement('a');
 		link.style.display = 'none';
-		link.href = '/resume.png';
+		link.href = '/resume.pdf';
 		link.download = 'Resume_Iyan_Syeed-Miller';
 
 		// It needs to be added to the DOM so it can be clicked
