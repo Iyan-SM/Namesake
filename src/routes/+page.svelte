@@ -7,7 +7,7 @@
 	function downloadResume(){
 		const link = document.createElement('a');
 		link.style.display = 'none';
-		link.href = '/resume.pdf';
+		link.href = '/TDResume.pdf';
 		link.download = 'Resume_Iyan_Syeed-Miller';
 
 		// It needs to be added to the DOM so it can be clicked
@@ -38,7 +38,7 @@
 	<div class="bodyContainer">
 		<div class="resumeBorder gradient">
 			<span class='label'><p>Resume</p><button class='download' onclick={downloadResume()}><i class="fas fa-download"></i></button></span>
-			<img  class="resume" src="resume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
+			<img  class="resume" src="TDResume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
 		</div>
 		<!--
 		<div class="thumbnailContainer">

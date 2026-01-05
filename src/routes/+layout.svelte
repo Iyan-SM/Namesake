@@ -18,28 +18,28 @@
 
 <nav>
    <div class='bar short'> 
-      {#if $page.url.pathname === '/'}
+      <!-- {#if $page.url.pathname === '/'}
          <a href="/" class="deactivated">Home</a>
       {:else}
          <a href="/">Home</a>
-      {/if}
+      {/if} -->
    </div>
 
    <div class='bar med'>
-      {#if $page.url.pathname === '/code'}
+      <!-- {#if $page.url.pathname === '/code'}
          <a href="/code" class="deactivated">Code</a>
       {:else}
          <a href="/code">Code</a>
-      {/if}
+      {/if} -->
    </div>
 
    <div class='bar long'> 
-      {#if $page.url.pathname === '/3dArt'}
-         <a href="/3dArt" class="deactivated">3D Art</a>
+      <!-- {#if $page.url.pathname === '/portfolio'}
+         <a href="/portfolio" class="deactivated">3D Art</a>
       {:else}
-         <a href="/3dArt">3D Art</a>
+         <a href="/portfolio">3D Art</a>
       {/if}
-   </div>
+   </div> -->
 </nav>
 
 <div>
