@@ -32,7 +32,7 @@
 	<div class="links">
 		<button onclick={openInNewTab("mailto:iyansyeedmiller@gmail.com")} class="bioLink"><i class="fas fa-envelope"></i> <span>Iyansyeedmiller@gmail.com</span></button>
 		<button onclick={openInNewTab("https://www.linkedin.com/in/iyan-syeed-miller/")} class="bioLink"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></button>
-		<button onclick={openInNewTab("https://github.com/Fireg53")} class="bioLink"><i class="fab fa-github"></i><span>GitHub</span></button>
+		<button onclick={openInNewTab("https://github.com/Iyan-SM")} class="bioLink"><i class="fab fa-github"></i><span>GitHub</span></button>
 		<button onclick={openInNewTab("https://www.youtube.com/@fireg5355")} class="bioLink"><i class="fab fa-youtube"></i> <span>Youtube</span></button>
 	</div>
 	<div class="bodyContainer">
@@ -62,7 +62,7 @@
 		font-variation-settings:
 			"YEAR" 1979;
 		color: #29274C;
-		font-size: 6.5vw;
+		font-size: calc(min(6.5vw, 90px));
 		line-height: 8rem;
 		margin-left: 5%;
 		margin-right: 10%;
@@ -77,25 +77,39 @@
 		margin-left: 5%;
 	}
 
+	.bioLink {
+		align-items: center;
+		background-image: linear-gradient(144deg,#E6BCCD, #D295BF 20%, #7E52A0);
+		border: 0;
+		border-radius: 8px;
+		box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+		box-sizing: border-box;
+		color: #FFFFFF;
+		display: flex;
+		font-family: Phantomsans, sans-serif;
+		font-size: 1.2rem;
+		justify-content: center;
+		column-gap: 0.5em;
+		padding: 8px 12px; 
+		text-decoration: none;
+		user-select: none;
+		touch-action: manipulation;
+		white-space: nowrap;
+		cursor: pointer;
+		transition: box-shadow ease 0.5s;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	.bioLink:active,
+	.bioLink:not([disabled]):hover {
+		box-shadow:  -.125rem -.125rem 0.5rem #E6BCCD, .125rem .125rem 0.5rem #c085ee;
+	}
+
 	.bodyContainer{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
-
-	.thumbnailContainer {
-		display: flex;
-		justify-content: space-between;
-		margin-left: 8vw;
-		margin-right: 8vw;
-		margin-top: 5rem;
-		height: 70vw;
-	}
-	
-	.thumbnail {
-		
-		width: 20vw;
-		height: 20vw;
 	}
 
 	.resumeBorder{
@@ -138,34 +152,7 @@
 		color: white;
 		cursor: pointer;
 	}
-	.bioLink {
-		align-items: center;
-		background-image: linear-gradient(144deg,#E6BCCD, #D295BF 20%, #7E52A0);
-		border: 0;
-		border-radius: 8px;
-		box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-		box-sizing: border-box;
-		color: #FFFFFF;
-		display: flex;
-		font-family: Phantomsans, sans-serif;
-		font-size: 1.5rem;
-		justify-content: center;
-		column-gap: 0.5em;
-		padding: 8px 12px; 
-		text-decoration: none;
-		user-select: none;
-		touch-action: manipulation;
-		white-space: nowrap;
-		cursor: pointer;
-		transition: box-shadow ease 0.5s;
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-
-	.bioLink:active,
-	.bioLink:not([disabled]):hover {
-		box-shadow:  -.125rem -.125rem 0.5rem #E6BCCD, .125rem .125rem 0.5rem #c085ee;
-	}
+	
 
 	/*Page Transitions*/
 	/* :root {
