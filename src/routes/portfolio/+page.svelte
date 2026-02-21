@@ -2,14 +2,14 @@
     <h1>PORTFOLIO</h1>
     <div class="artGrid">
         <div class="cell">
-            <img class="artwork" src="art/oneOne.png" alt="One-One Render">
-            <p class="title">One-One</p>
-            <p class="desc">character</p>
-        </div>
-        <div class="cell">
             <img class="artwork" src="art/chaor3.png" alt="Chair Render">
             <p class="title">Chair 3</p>
             <p class="desc">asset</p>
+        </div>
+        <div class="cell">
+            <video class="artwork" src="art/solarSoup.mov" alt="Planets Orbiting In Solar Ocean Animation" autoplay loop muted webkit-playsinline playsinline><track kind="captions"></video>
+            <p class="title">Solar Soup</p>
+            <p class="desc">animation, simulation</p>
         </div>
         <div class="cell">
             <img class="artwork" src="art/bestagon.gif" alt="Rotating Hexagon Render">
@@ -22,10 +22,11 @@
             <p class="desc">icon</p>
         </div>
         <div class="cell">
-            <video class="artwork" src="art/solarSoup.mov" alt="Planets Orbiting In Solar Ocean Animation" autoplay loop muted webkit-playsinline playsinline><track kind="captions"></video>
-            <p class="title">Solar Soup</p>
-            <p class="desc">animation, simulation</p>
+            <img class="artwork" src="art/oneOne.png" alt="One-One Render">
+            <p class="title">One-One</p>
+            <p class="desc">character</p>
         </div>
+        
         <div class="cell">
             <video class="artwork" src="art/oshkosh_v3.mp4" alt="Cell Shaded Train Animation" autoplay loop muted webkit-playsinline playsinline><track kind="captions"></video>
             <p class="title">Osh Kosh</p>

@@ -90,6 +90,12 @@
 		height: 10.4rem;
 	}
 
+	.home > a {
+		padding-top: 5rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
 	.code {
 		background-color: #d295bf;
 		box-shadow: 1px 1px 4px #94566e;
@@ -99,6 +105,13 @@
 	.code:not(.deactivated):hover {
 		height: 17.4rem;
 	}
+
+	.code > a {
+		padding-top: 12rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
 
 	.art {
 		background-color: #7e52a0;
@@ -110,10 +123,16 @@
 		height: 24.4rem;
 	}
 
+	.art > a {
+		padding-top: 18rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
 	.bar > a {
 		text-decoration: none;
 		color: white;
-		margin-bottom: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	@media screen and (max-width: 1160px) {
@@ -153,6 +172,11 @@
          height: 3rem;
 		}
 
+		.home > a {
+			padding-left: 73vw;
+			padding-top: 1rem;
+		}
+
 		.code {
 			background-color: #d295bf;
 			box-shadow: 1px 1px 4px #94566e;
@@ -161,7 +185,11 @@
 		}
 		.code:not(.deactivated):hover {
 			width: calc(62vw + 0.4rem);
-         height: 3rem;
+         	height: 3rem;
+		}
+		.code > a {
+			padding-left: 49vw;
+			padding-top: 1rem;
 		}
 
 		.art {
@@ -172,13 +200,19 @@
 		}
 		.art:not(.deactivated):hover {
 			width: calc(37vw + 0.4rem);
-         height: 3rem;
+         	height: 3rem;
 		}
-      .bar > a {
+		.art > a {
+			padding-left: 21vw;
+			padding-top: 1rem;
+		}
+
+      	.bar > a {
 		text-decoration: none;
 		color: white;
-		margin-right: 1rem;
-	}
+		padding-right: 1rem;
+		}
+
 	}
 
 	/*Page Transitions*/

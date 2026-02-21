@@ -37,7 +37,7 @@
 	</div>
 	<div class="bodyContainer">
 		<div class="resumeBorder gradient">
-			<span class='label'><p>Resume</p><button class='download' onclick={downloadResume()}><i class="fas fa-download"></i></button></span>
+			<span class='label'><p>Resume:</p><button class='download' onclick={downloadResume()}><i class="fas fa-download"></i></button></span>
 			<img  class="resume" src="TDResume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
 		</div>
 		<!--
@@ -137,20 +137,33 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		align-items: center;
+		align-items: top;
 		color: white;
 		font-family: "Fugaz One", sans-serif;
 		font-weight: 400;
 		font-style: normal;
 		font-size: 1.5rem;
 		line-height: 0.2vw;
-
 	}
+
+	.label > p {
+		margin-top: 0.5rem;
+	}
+
 	.download {
-		background-color:#E6BCCD;
+		background-color: transparent;
 		border: 0;
 		color: white;
 		cursor: pointer;
+		position: relative;
+
+	}
+
+	.fa-download {
+		font-size: 25px;
+		position: absolute;
+		top: -6px;
+		right: 0px;
 	}
 	
 
