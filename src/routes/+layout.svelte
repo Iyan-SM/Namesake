@@ -173,7 +173,7 @@
 		}
 
 		.home > a {
-			padding-left: 73vw;
+			padding-left: 65vw;
 			padding-top: 1rem;
 		}
 
@@ -188,7 +188,7 @@
          	height: 3rem;
 		}
 		.code > a {
-			padding-left: 49vw;
+			padding-left: 26vw;
 			padding-top: 1rem;
 		}
 
