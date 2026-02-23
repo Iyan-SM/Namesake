@@ -203,7 +203,7 @@
          	height: 3rem;
 		}
 		.art > a {
-			padding-left: 21vw;
+			padding-left: 18vw;
 			padding-top: 1rem;
 		}
 
