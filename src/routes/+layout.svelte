@@ -173,7 +173,7 @@
 		}
 
 		.home > a {
-			padding-left: 65vw;
+			padding-left: calc(87vw - 80px);
 			padding-top: 1rem;
 		}
 
@@ -188,7 +188,7 @@
          	height: 3rem;
 		}
 		.code > a {
-			padding-left: 26vw;
+			padding-left: calc(62vw - 78px);
 			padding-top: 1rem;
 		}
 
@@ -203,7 +203,7 @@
          	height: 3rem;
 		}
 		.art > a {
-			padding-left: 18vw;
+			padding-left: calc(37vw - 97px);
 			padding-top: 1rem;
 		}
 
