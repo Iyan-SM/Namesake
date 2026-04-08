@@ -40,6 +40,9 @@
 			<span class='label'><p>Resume:</p><button class='download' onclick={downloadResume()}><i class="fas fa-download"></i></button></span>
 			<img  class="resume" src="Resume_PMIT.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
 		</div>
+		<div class="thumbnails">
+
+		</div>
 	</div>
 </div>
 
@@ -72,8 +75,8 @@
 
 	.bioLink {
 		align-items: center;
-		/* background-image: linear-gradient(144deg,#E6BCCD, #D295BF 20%, #7E52A0); */
-		background-color: var(--template-pink);
+		background-image: linear-gradient(144deg,#E6BCCD, #D295BF 20%, #7E52A0);
+		/* background-color: var(--template-pink); */
 		border: 0;
 		border-radius: 8px;
 		box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -102,8 +105,8 @@
 
 	.bodyContainer{
 		display: flex;
-		justify-content: center;
 		align-items: center;
+		justify-content: center;
 	}
 
 	.resumeBorder{
@@ -224,6 +227,9 @@
 			font-size: 8vw;
 			line-height: 10vw;
 			text-align: center;
+			margin-left: 0;
+			margin-right: 0;
+
 		}
 
 		.bioLink {
