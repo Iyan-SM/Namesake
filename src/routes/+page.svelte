@@ -7,7 +7,7 @@
 	function downloadResume(){
 		const link = document.createElement('a');
 		link.style.display = 'none';
-		link.href = '/TDResume.pdf';
+		link.href = '/Resume_PMIT.pdf';
 		link.download = 'Resume_Iyan_Syeed-Miller';
 
 		// It needs to be added to the DOM so it can be clicked
@@ -38,15 +38,8 @@
 	<div class="bodyContainer">
 		<div class="resumeBorder gradient">
 			<span class='label'><p>Resume:</p><button class='download' onclick={downloadResume()}><i class="fas fa-download"></i></button></span>
-			<img  class="resume" src="TDResume.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
+			<img  class="resume" src="Resume_PMIT.png" alt='Resume' style='width:100%; height:100%; border-radius:6px;'>
 		</div>
-		<!--
-		<div class="thumbnailContainer">
-			<div class="thumbnail gradient"></div>
-			<div class="thumbnail gradient"></div>
-			<div class="thumbnail gradient"></div>
-		</div>
-		-->
 	</div>
 </div>
 
@@ -64,7 +57,7 @@
 		color: #29274C;
 		font-size: calc(min(6.5vw, 90px));
 		line-height: 8rem;
-		margin-left: 5%;
+		margin-left: calc(5% + 20px);
 		margin-right: 10%;
 		margin-top: 4rem;
 	}
@@ -79,7 +72,8 @@
 
 	.bioLink {
 		align-items: center;
-		background-image: linear-gradient(144deg,#E6BCCD, #D295BF 20%, #7E52A0);
+		/* background-image: linear-gradient(144deg,#E6BCCD, #D295BF 20%, #7E52A0); */
+		background-color: var(--template-pink);
 		border: 0;
 		border-radius: 8px;
 		box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
